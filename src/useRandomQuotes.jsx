@@ -8,7 +8,7 @@ const useRandomQuotes = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data.content);
-          setJoke(data.content);
+          setJoke(data);
         });
     fetchJoke();
   }, []);
