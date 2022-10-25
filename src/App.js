@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import useRandomQuotes from "./useRandomQuotes";
 
 function App() {
+  const joke = useRandomQuotes();
+  const generateJoke = (e) => {};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App h-screen flex items-center justify-center">
+      <div className="card w-full text-center lg:mx-72 md:mx-22 mx-5 p-20 relative">
+        <form>
+          <p className="font-bold text-gray-600 text-3xl">{joke}</p>
+          <span className="quote">
+            <i class="fa-solid fa-quote-right fa-2x"></i>
+          </span>
+          <input type="text" className="hidden" />
+          <button
+            onClick={generateJoke}
+            type="submit"
+            className="App py-2 px-10 rounded-full font-semibold mt-10"
+          >
+            Generate
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
